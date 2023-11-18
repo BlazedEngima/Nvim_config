@@ -48,14 +48,14 @@ M.harpoon = {
       "Go to file 2",
     },
 
-    ["<A-f>"] = {
+    ["<A-e>"] = {
       function ()
         require("harpoon.ui").nav_file(3)
       end,
       "Go to file 3",
     },
 
-    ["<A-s>"] = {
+    ["<A-c>"] = {
       function ()
         require("harpoon.ui").nav_file(4)
       end,
