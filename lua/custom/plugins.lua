@@ -1,6 +1,26 @@
 local plugins = {
   {
+    "kdheepak/lazygit.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim",
+    },
+    config = function ()
+      require("telescope").load_extension("lazygit")
+    end,
+  },
+  {
+    "tpope/vim-fugitive",
+    event = "VeryLazy",
+  },
+  {
+    "mbbill/undotree",
+    event = "VeryLazy",
+  },
+  {
     "theprimeagen/harpoon",
+    event = "VeryLazy",
   },
   {
     "rcarriga/nvim-dap-ui",

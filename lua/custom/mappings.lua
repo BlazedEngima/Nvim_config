@@ -18,6 +18,33 @@ M.general = {
   }
 }
 
+M.fugitive = {
+  n = {
+    ["<leader>gs"] = {
+      "<cmd> Git <CR>",
+      "Open git status",
+    }
+  }
+}
+
+M.lazygit = {
+  n = {
+    ["<leader>gg"] = {
+      "<cmd> LazyGit <CR>",
+      "Open LazyGit",
+    },
+  }
+}
+
+M.undotree = {
+  n = {
+    ["<leader>u"] = {
+      "<cmd> UndotreeToggle <CR>",
+      "Toggle undo tree",
+    }
+  }
+}
+
 M.harpoon = {
   n = {
     ["<leader>a"] = {
