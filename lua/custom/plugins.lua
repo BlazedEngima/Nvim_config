@@ -1,5 +1,8 @@
 local plugins = {
   {
+    "theprimeagen/harpoon",
+  },
+  {
     "rcarriga/nvim-dap-ui",
     event = "VeryLazy",
     dependencies = "mfussenegger/nvim-dap",
