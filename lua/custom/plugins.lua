@@ -11,10 +11,6 @@ local plugins = {
     end,
   },
   {
-    "tpope/vim-fugitive",
-    event = "VeryLazy",
-  },
-  {
     "mbbill/undotree",
     event = "VeryLazy",
   },
