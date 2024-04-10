@@ -18,15 +18,6 @@ M.general = {
   }
 }
 
-M.fugitive = {
-  n = {
-    ["<leader>gs"] = {
-      "<cmd> Git <CR>",
-      "Open git status",
-    }
-  }
-}
-
 M.lazygit = {
   n = {
     ["<leader>gg"] = {
