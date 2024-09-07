@@ -1,5 +1,10 @@
 local plugins = {
   {
+    "vhyrro/luarocks.nvim",
+    priority = 1000,
+    config = true,
+  },
+  {
     "kdheepak/lazygit.nvim",
     event = "VeryLazy",
     dependencies = {
@@ -25,7 +30,7 @@ local plugins = {
       "mfussenegger/nvim-dap",
       "nvim-neotest/nvim-nio",
     },
-    config = function ()
+    config = function()
       local dap = require("dap")
       local dapui = require("dapui")
       dapui.setup()
@@ -70,7 +75,11 @@ local plugins = {
   },
   {
     "neovim/nvim-lspconfig",
-    config = function ()
+    event = "VeryLazy",
+    dependencies = {
+      "williamboman/mason.nvim",
+    },
+    config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end,
@@ -80,9 +89,14 @@ local plugins = {
     opts = {
       ensure_installed = {
         "clangd",
+        "lua-language-server",
         "clang-format",
         "cmake-language-server",
         "codelldb",
+        "pyright",
+        "mypy",
+        "ruff",
+        "rust-analyzer",
       }
     }
   }
