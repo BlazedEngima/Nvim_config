@@ -3,8 +3,8 @@
 local M = {}
 
 M.ui = {
-  theme_toggle = { "tokyonight", "palenight" },
-  theme = "tokyonight",
+  theme_toggle = { "tokyonight", "palenight", "ayu_dark" },
+  theme = "palenight",
   transparency = true,
   statusline = {
     theme = "vscode_colored"
