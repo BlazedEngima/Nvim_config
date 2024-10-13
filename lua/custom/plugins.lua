@@ -20,6 +20,12 @@ local plugins = {
     event = "VeryLazy",
   },
   {
+    "garymjr/nvim-snippets",
+    event = "VeryLazy",
+    opts = { friendly_snippets = true },
+    keys = require "custom.keys.nvim-snippets"
+  },
+  {
     "theprimeagen/harpoon",
     event = "VeryLazy",
   },
