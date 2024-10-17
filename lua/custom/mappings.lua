@@ -23,6 +23,23 @@ M.general = {
   }
 }
 
+M.quicker = {
+  n = {
+    ["<leader>qf"] = {
+      function ()
+        require("quicker").toggle()
+      end,
+      "Toggle quickfix",
+    },
+    ["<leader>ql"] = {
+      function ()
+        require("quicker").toggle({ loclist = true })
+      end,
+      "Toggle loclist",
+    },
+  }
+}
+
 M.lazygit = {
   n = {
     ["<leader>gg"] = {
