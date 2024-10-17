@@ -26,6 +26,31 @@ local plugins = {
     keys = require "custom.keys.nvim-snippets"
   },
   {
+    "stevearc/quicker.nvim",
+    event = "FileType qf",
+    config = function ()
+      require "custom.configs.quicker"
+    end,
+    opts = {},
+  },
+  {
+    "junegunn/fzf.vim",
+    event = "VeryLazy",
+    dir = "~/.fzf",
+    build = "./install --all"
+  },
+  {
+    "kevinhwang91/nvim-bqf",
+    ft = "qf",
+    event = "VeryLazy",
+    dependencies = {
+      "junegunn/fzf",
+    },
+    config = function ()
+      require "custom.configs.bqf"
+    end
+  },
+  {
     "theprimeagen/harpoon",
     event = "VeryLazy",
   },
@@ -78,6 +103,13 @@ local plugins = {
     opts = function()
       return require "custom.configs.null-ls"
     end,
+  },
+  {
+    "rust-lang/rust.vim",
+    ft = "rust",
+    init = function ()
+      vim.g.rustfmt_autosave = 1
+    end
   },
   {
     "neovim/nvim-lspconfig",

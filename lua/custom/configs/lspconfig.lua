@@ -3,6 +3,7 @@ local on_attach = base.on_attach
 local capabilities = base.capabilities
 
 local lspconfig = require("lspconfig")
+local util = require "lspconfig/util"
 local rename = require('nvchad.renamer')
 
 -- clangd setup
@@ -39,25 +40,6 @@ lspconfig.clangd.setup({
     vim.keymap.set('n', '<leader>wl', function()
       print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, {noremap = true, silent = true, buffer = bufnr, desc = "List workspace folders"})
-    -- if client.server_capabilities.codeLensProvider then
-    --   vim.g.codelens_visible = true
-    --   vim.lsp.codelens.refresh()
-    --   vim.api.nvim_create_autocmd({
-    --     "BufEnter",
-    --     "CursorHold",
-    --     "InsertLeave",
-    --   },
-    --   {
-    --     buffer = bufnr,
-    --     callback = function()
-    --       vim.lsp.codelens.refresh()
-    --     end,
-    --   })
-    -- else
-    --   print("No code lens available")
-    -- end
-    --
-    -- on_attach(client, bufnr)
   end,
 
   capabilities = capabilities,
@@ -80,6 +62,20 @@ lspconfig.clangd.setup({
     completeUnimported = true,
     clangdFileStatus = true,
   },
+})
+
+lspconfig.rust_analyzer.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {"rust"},
+  root_dir = util.root_pattern("Cargo.toml", "rust-project.json"),
+  settings = {
+    ["rust-analyzer"] = {
+      cargo = {
+        allFeatures = true,
+      }
+    }
+  }
 })
 
 -- Python setup
